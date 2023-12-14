@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
 import Title from './components/Title';
+import Upload from './components/Upload';
 
 function App() {
   return (
-    <div className="component">
+    <div className="App">
         <Title />
+        <Upload />
     </div>
   );
 }
