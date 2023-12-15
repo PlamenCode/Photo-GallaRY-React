@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
+
 
 export default function Model({ selectedImg, setSelectedImg }) {
 
@@ -9,8 +11,17 @@ export default function Model({ selectedImg, setSelectedImg }) {
     };
 
   return (
-    <div className='backdrop' onClick={handleClick}>
-        <img src={selectedImg} alt="Enlarged Pic" />
-    </div>
+    <motion.div 
+        className='backdrop' 
+        onClick={handleClick}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+    >
+        <motion.img src={selectedImg} 
+            alt="Enlarged Pic"
+            initial={{ y: '-100vh' }}  
+            animate={{ y: 0 }}
+        />
+    </motion.div>
   )
 }
